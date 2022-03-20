@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +11,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/posts', 'PostController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@index');
+
+Route::get('/posts/{post}', 'PostController@show');
